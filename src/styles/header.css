@@ -23,6 +23,7 @@
 .header nav {
     display: flex;
     gap: 20px;
+    font-size: 20px;
 }
 
 .header .mobile-menu {
@@ -57,6 +58,7 @@
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         border-radius: 10px;
         pointer-events: none;
+        font-size: 16px;
     }
 
     .header nav.visible {
