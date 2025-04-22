@@ -61,7 +61,7 @@ class Pagination extends React.Component<Props, State> {
             <div className="pagination">
                 <a
                     href="#"
-                    className={`action ${page === 1 ? "disabled" : ""}`}
+                    className="action"
                     onClick={(e) => {
                         e.preventDefault();
                         this.onPageChange(page - 1);
@@ -89,7 +89,7 @@ class Pagination extends React.Component<Props, State> {
                 </div>
                 <a
                     href="#"
-                    className={`action ${page === total ? "disabled" : ""}`}
+                    className="action"
                     onClick={(e) => {
                         e.preventDefault();
                         this.onPageChange(page + 1);

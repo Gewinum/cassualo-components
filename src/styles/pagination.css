@@ -10,6 +10,11 @@
     align-items: center;
 }
 
+.pagination a {
+    text-decoration: none;
+    color: black;
+}
+
 .pagination .pages {
     display: inline-flex;
     align-items: center;
@@ -28,16 +33,11 @@
     padding: 10px;
     background-color: #FFF;
     border-radius: 54px;
+    border: 2px solid rgba(0, 0, 0, 0.2);
     font-size: 16px;
     font-family: "Inter", sans-serif;
     text-align: center;
     outline: none;
-}
-
-.action .disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-    pointer-events: none;
 }
 
 .pagination .pages a {
