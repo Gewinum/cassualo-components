@@ -12,7 +12,6 @@ type Props = {
 
 type State = {
     page: number;
-    inputValue: string;
 };
 
 class Pagination extends React.Component<Props, State> {
@@ -20,7 +19,6 @@ class Pagination extends React.Component<Props, State> {
         super(props);
         this.state = {
             page: props.page,
-            inputValue: "",
         };
     }
 
@@ -28,34 +26,19 @@ class Pagination extends React.Component<Props, State> {
         if (page >= 1 && page <= this.props.total) {
             const status = this.props.onPageChange(page);
             if (status) {
-                this.setState({
-                    page: page,
-                    inputValue: page.toString(),
-                });
+                this.setState({ page });
             }
         }
     };
 
-    handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        if (parseInt(e.target.value, 10) > this.props.total) {
-            e.target.value = this.props.total.toString();
-        }
-
-        this.setState({ inputValue: e.target.value });
-    };
-
-    handleInputKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-        if (e.key === "Enter") {
-            const page = parseInt(this.state.inputValue, 10);
-            if (!isNaN(page)) {
-                this.onPageChange(page);
-            }
-        }
+    handleDropdownChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+        const page = parseInt(e.target.value, 10);
+        this.onPageChange(page);
     };
 
     render() {
         const { total, perPage } = this.props;
-        const { page, inputValue } = this.state;
+        const { page } = this.state;
 
         const half = Math.floor(perPage / 2);
         let startPage = Math.max(1, page - half);
@@ -64,6 +47,15 @@ class Pagination extends React.Component<Props, State> {
         if (endPage - startPage + 1 < perPage) {
             startPage = Math.max(1, endPage - perPage + 1);
         }
+
+        const dropdownOptions = Array.from(
+            { length: Math.ceil(total / perPage) },
+            (_, i) => {
+                const rangeStart = i * perPage + 1;
+                const rangeEnd = Math.min((i + 1) * perPage, total);
+                return { value: rangeStart, label: `${rangeStart}-${rangeEnd}` };
+            }
+        );
 
         return (
             <div className="pagination">
@@ -105,16 +97,17 @@ class Pagination extends React.Component<Props, State> {
                 >
                     <FaAngleRight size={20} />
                 </a>
-                <input
-                    type="number"
-                    className="page-input"
-                    value={inputValue}
-                    onChange={this.handleInputChange}
-                    onKeyDown={this.handleInputKeyDown}
-                    placeholder="Page"
-                    min="1"
-                    max={total}
-                />
+                <select
+                    className="page-dropdown"
+                    value={(Math.floor((page - 1) / perPage) * perPage) + 1}
+                    onChange={this.handleDropdownChange}
+                >
+                    {dropdownOptions.map((option) => (
+                        <option key={option.value} value={option.value}>
+                            {option.label}
+                        </option>
+                    ))}
+                </select>
             </div>
         );
     }

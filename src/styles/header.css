@@ -45,7 +45,7 @@
         width: 55%;
         position: absolute;
         opacity: 0;
-        transform: translateY(-30px);
+        transform: translateY(-50px);
         transition: opacity 0.3s ease, transform 0.3s ease;
         top: 100%;
         left: 20%;
@@ -59,10 +59,10 @@
         border-radius: 10px;
         pointer-events: none;
         font-size: 16px;
+        background-color: white;
     }
 
     .header nav.visible {
-        display: flex;
         opacity: 1;
         transform: translateY(0);
         pointer-events: auto;
