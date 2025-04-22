@@ -1,0 +1,83 @@
+.button {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    padding: 15px 20px;
+    transition: all 0.3s ease;
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.button:not(:disabled)::after {
+    content: '';
+    position: absolute;
+    height: 103%;
+    width: 102%;
+    border-radius: 11px;
+    background-image: linear-gradient(180deg, #FF4123 0%, #FF8702 100%);
+    z-index: -1;
+    opacity: 0;
+}
+
+.button:disabled {
+    cursor: not-allowed;
+}
+
+.button.filled {
+    color: #fff;
+    background: linear-gradient(180deg, #FF4123 0%, #FF8702 100%);
+    border: none;
+}
+
+.button.filled:not(:disabled):hover {
+    color: #FF2A2A;
+    background: #fff;
+}
+
+.button.filled:not(:disabled)::after {
+    opacity: 1;
+}
+
+.button.filled:disabled {
+    background: #847F7F;
+}
+
+.button.outlined {
+    color: #FF2A2A;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 10px;
+}
+
+.button.outlined:not(:disabled)::after {
+    opacity: 1;
+}
+
+.button.outlined:not(:disabled):hover {
+    background: linear-gradient(180deg, #FF4123 0%, #FF8702 100%);
+    color: #fff;
+}
+
+.button.outlined:disabled {
+    border: #CAC4C4 1px solid;
+    color: #847F7F;
+}
+
+.button.empty {
+    color: #FF2A2A;
+    border: none;
+    background: #ffffff;
+}
+
+.button.empty:not(:disabled):hover::after {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.button.empty:disabled {
+    color: #847F7F;
+}

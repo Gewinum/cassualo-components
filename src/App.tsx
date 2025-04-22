@@ -2,6 +2,9 @@ import Nothing from "./utils/nothing.ts";
 import * as React from "react";
 import Header from "./components/header.tsx";
 import Pagination from "./components/pagination.tsx";
+import FilledButton from "./components/buttons/filledButton.tsx";
+import OutlinedButton from "./components/buttons/outlinedButton.tsx";
+import EmptyButton from "./components/buttons/emptyButton.tsx";
 
 type State = {
     perPage: number;
@@ -40,6 +43,28 @@ class App extends React.Component<Nothing, State> {
                         return true;
                     }}
                 />
+                <div style={{display: "flex", gap: "10px"}}>
+                    <FilledButton onclick={() => console.log("clicked")}>
+                        Button
+                    </FilledButton>
+                    <OutlinedButton onclick={() => console.log("clicked")}>
+                        Button
+                    </OutlinedButton>
+                    <EmptyButton onclick={() => console.log("clicked")}>
+                        Button
+                    </EmptyButton>
+                </div>
+                <div style={{display: "flex", gap: "10px", marginTop: "30px"}}>
+                    <FilledButton onclick={() => console.log("clicked")} disabled={true}>
+                        Button
+                    </FilledButton>
+                    <OutlinedButton onclick={() => console.log("clicked")} disabled={true}>
+                        Button
+                    </OutlinedButton>
+                    <EmptyButton onclick={() => console.log("clicked")} disabled={true}>
+                        Button
+                    </EmptyButton>
+                </div>
             </>
         );
     }
