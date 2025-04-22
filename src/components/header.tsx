@@ -21,11 +21,11 @@ class Header extends React.Component<Nothing, State> {
     render() {
         return (
             <div className="header">
-                <img src="./images/logo.png" alt="logo" />
+                <a href="./"><img src="./images/logo.png" alt="logo" /></a>
                 <nav className={this.state.isNavVisible ? "visible" : ""}>
-                    <a href="/">Home</a>
-                    <a href="/about">About</a>
-                    <a href="/contact">Contact</a>
+                    <a href="/mission">Mission</a>
+                    <a href="/articles">Articles</a>
+                    <a href="/quizes">Quizes</a>
                 </nav>
                 <a href="#" className="mobile-menu" onClick={this.toggleNav}>
                     <FaEllipsisV className="icon" />
