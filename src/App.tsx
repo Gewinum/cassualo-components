@@ -10,6 +10,7 @@ import Cards from "./components/cards.tsx";
 import TextArea from "./components/textarea.tsx";
 import RangeSlider from "./components/rangeSlider.tsx";
 import DualRangeSlider from "./components/dualRangeSlider.tsx";
+import Switch from "./components/switch.tsx";
 
 type State = {
     perPage: number;
@@ -102,6 +103,8 @@ class App extends React.Component<Nothing, State> {
                 <RangeSlider min={0} max={100} disabled={true} defaultValue={30} />
                 <DualRangeSlider min={0} max={100} />
                 <DualRangeSlider min={0} max={100} disabled={true} defaultMinValue={35} defaultMaxValue={65} />
+                <Switch />
+                <Switch checked={true} disabled={true} />
                 <div style={{margin: "50px"}} />
             </>
         );
