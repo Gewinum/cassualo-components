@@ -5,6 +5,7 @@ import Pagination from "./components/pagination.tsx";
 import FilledButton from "./components/buttons/filledButton.tsx";
 import OutlinedButton from "./components/buttons/outlinedButton.tsx";
 import EmptyButton from "./components/buttons/emptyButton.tsx";
+import Carousel from "./components/carousel.tsx";
 
 type State = {
     perPage: number;
@@ -64,6 +65,13 @@ class App extends React.Component<Nothing, State> {
                     <EmptyButton onclick={() => console.log("clicked")} disabled={true}>
                         Button
                     </EmptyButton>
+                </div>
+                <div style={{maxWidth: "100%", width: "1440px", margin: "30px auto"}}>
+                    <Carousel slides={[
+                        { src: "https://picsum.photos/1920/1080?random=1", alt: "Slide 1" },
+                        { src: "https://picsum.photos/1920/1080?random=2", alt: "Slide 2" },
+                        { src: "https://picsum.photos/1920/1080?random=3", alt: "Slide 3" },
+                    ]} />
                 </div>
             </>
         );
