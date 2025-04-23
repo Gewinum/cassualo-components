@@ -21,11 +21,12 @@ class Switch extends React.Component<Props, State> {
     }
 
     handleChange = () => {
+        const newValue = !this.state.isChecked;
         this.setState(prevState => ({
             isChecked: !prevState.isChecked
         }));
         if (this.props.onChange) {
-            this.props.onChange(this.state.isChecked);
+            this.props.onChange(newValue);
         }
     }
 
