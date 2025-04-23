@@ -1,0 +1,83 @@
+.dual-range-slider {
+    width: 504px;
+    max-width: 100%;
+    position: relative;
+    margin-top: 10px;
+}
+
+.dual-range-slider .slider-container {
+    position: relative;
+    height: 2px;
+    background: #FFB28E;
+}
+
+.dual-range-slider.disabled .slider-container {
+    background-color: #D5D5D5;
+}
+
+.dual-range-slider .slider-track {
+    position: absolute;
+    height: 2px;
+    background-color: #FF5200;
+    z-index: 1;
+}
+
+.dual-range-slider input {
+    position: absolute;
+    width: 100%;
+    -webkit-appearance: none;
+    background: transparent;
+    height: 2px;
+    margin: 0;
+    padding: 0;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.dual-range-slider input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #fff;
+    cursor: pointer;
+    border: 1px solid #FF5200;
+    transition: box-shadow 0.3s ease;
+    pointer-events: auto;
+}
+
+.dual-range-slider input:not(:disabled)::-webkit-slider-thumb:hover {
+    box-shadow: 0 0 4px #FF5200;
+}
+
+.dual-range-slider input:not(:disabled)::-webkit-slider-thumb:focus {
+    box-shadow: 0 0 7px #FF5200;
+}
+
+.dual-range-slider input:not(:disabled)::-webkit-slider-thumb:active {
+    box-shadow: 0 0 10px #FF5200;
+}
+
+.dual-range-slider .limits {
+    display: flex;
+    justify-content: space-between;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    margin-top: 5px;
+}
+
+.dual-range-slider input:disabled {
+    background-color: transparent;
+}
+
+.dual-range-slider input:disabled::-webkit-slider-thumb {
+    background: #9E9E9E;
+    cursor: not-allowed;
+    border: 1px solid #9E9E9E;
+}
+
+.dual-range-slider.disabled .slider-track {
+    background-color: #9E9E9E;
+}

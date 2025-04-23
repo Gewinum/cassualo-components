@@ -1,0 +1,53 @@
+.range-slider {
+    width: 504px;
+    max-width: 100%;
+}
+
+.range-slider input {
+    width: 100%;
+    background-color: #FF5200;
+    -webkit-appearance: none;
+    height: 2px;
+}
+
+.range-slider input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #fff;
+    cursor: pointer;
+    border: 1px solid #FF5200;
+    transition: box-shadow 0.3s ease;
+}
+
+.range-slider input:not(:disabled)::-webkit-slider-thumb:hover {
+    box-shadow: 0 0 4px #FF5200;
+}
+
+.range-slider input:not(:disabled)::-webkit-slider-thumb:focus {
+    box-shadow: 0 0 7px #FF5200;
+}
+
+.range-slider input:not(:disabled)::-webkit-slider-thumb:active {
+    box-shadow: 0 0 10px #FF5200;
+}
+
+.range-slider .limits {
+    display: flex;
+    justify-content: space-between;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.range-slider input:disabled {
+    background-color: #9E9E9E;
+}
+
+.range-slider input:disabled::-webkit-slider-thumb {
+    background: #9E9E9E;
+    cursor: not-allowed;
+    border: 1px solid #9E9E9E;
+}

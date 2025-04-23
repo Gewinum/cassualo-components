@@ -7,6 +7,9 @@ import OutlinedButton from "./components/buttons/outlinedButton.tsx";
 import EmptyButton from "./components/buttons/emptyButton.tsx";
 import Carousel from "./components/carousel.tsx";
 import Cards from "./components/cards.tsx";
+import TextArea from "./components/textarea.tsx";
+import RangeSlider from "./components/rangeSlider.tsx";
+import DualRangeSlider from "./components/dualRangeSlider.tsx";
 
 type State = {
     perPage: number;
@@ -93,6 +96,13 @@ class App extends React.Component<Nothing, State> {
                         }
                     ]} />
                 </div>
+                <TextArea onChange={(e) => console.log(e.target.value)} placeholder="this is a placeholder" />
+                <TextArea placeholder="why error???" error="This is an error" />
+                <RangeSlider min={10} max={100} defaultValue={60} />
+                <RangeSlider min={0} max={100} disabled={true} defaultValue={30} />
+                <DualRangeSlider min={0} max={100} />
+                <DualRangeSlider min={0} max={100} disabled={true} defaultMinValue={35} defaultMaxValue={65} />
+                <div style={{margin: "50px"}} />
             </>
         );
     }
