@@ -6,6 +6,7 @@ import FilledButton from "./components/buttons/filledButton.tsx";
 import OutlinedButton from "./components/buttons/outlinedButton.tsx";
 import EmptyButton from "./components/buttons/emptyButton.tsx";
 import Carousel from "./components/carousel.tsx";
+import Cards from "./components/cards.tsx";
 
 type State = {
     perPage: number;
@@ -71,6 +72,25 @@ class App extends React.Component<Nothing, State> {
                         { src: "https://picsum.photos/1920/1080?random=1", alt: "Slide 1" },
                         { src: "https://picsum.photos/1920/1080?random=2", alt: "Slide 2" },
                         { src: "https://picsum.photos/1920/1080?random=3", alt: "Slide 3" },
+                    ]} />
+                </div>
+                <div style={{maxWidth: "100%", width: "1440px", margin: "30px auto", display: "flex"}}>
+                    <Cards cards={[
+                        {
+                            img: "./images/big-personalities.png",
+                            alt: "attachment style",
+                            contents: "Check which personality suits you the best from big 5"
+                        },
+                        {
+                            img: "./images/introverts-extroverts.png",
+                            alt: "introverts vs extroverts",
+                            contents: "Who do you get along better with? Introverts VS Extroverts"
+                        },
+                        {
+                            img: "./images/attachment-style.png",
+                            alt: "attachment style",
+                            contents: "Check which attachment style suits you the best"
+                        }
                     ]} />
                 </div>
             </>
