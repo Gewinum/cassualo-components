@@ -1,0 +1,75 @@
+.radio {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    width: 18px;
+    height: 18px;
+}
+
+.radio input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 16px;
+    width: 16px;
+    background-color: #ffffff;
+    border: 2px solid #6D6D6D;
+    border-radius: 50%;
+    transition: box-shadow 0.3s ease;
+}
+
+.radio input:not(:disabled), .radio input:checked ~ .checkmark:hover {
+    box-shadow: rgba(255, 82, 0, 0.5) 0 0 16px;
+}
+
+.radio input:not(:disabled), .radio input:not(:checked) ~ .checkmark:hover {
+    box-shadow: rgb(177, 177, 177) 0 0 16px;
+}
+
+.radio input:not(:disabled), .radio input:checked ~ .checkmark:active {
+    box-shadow: rgb(255, 82, 0) 0 0 24px;
+}
+
+.radio input:not(:disabled), .radio input:not(:checked) ~ .checkmark:active {
+    box-shadow: rgb(177, 177, 177) 0 0 24px;
+}
+
+.radio input:not(:disabled):checked ~ .checkmark {
+    border: 2px solid #FF5200;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.radio input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.radio .checkmark:after {
+    top: 2px;
+    left: 2px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #FF5200;
+}
+
+.radio input:disabled ~ .checkmark:after {
+    background: #B0B0B0;
+}

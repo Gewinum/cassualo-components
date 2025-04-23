@@ -12,6 +12,8 @@ import RangeSlider from "./components/rangeSlider.tsx";
 import DualRangeSlider from "./components/dualRangeSlider.tsx";
 import Switch from "./components/switch.tsx";
 import Checkbox from "./components/checkbox.tsx";
+import Radio from "./components/radio.tsx";
+import RadioGroup from "./components/radioGroup.tsx";
 
 type State = {
     perPage: number;
@@ -109,6 +111,26 @@ class App extends React.Component<Nothing, State> {
                 <div style={{margin: "50px"}} />
                 <Checkbox />
                 <Checkbox checked={true} disabled={true} />
+                <div style={{margin: "50px"}} />
+                <RadioGroup
+                    name="testGroup1"
+                    options={[
+                        { value: "option1", label: "Option 1" },
+                        { value: "option2", label: "Option 2" },
+                        { value: "option3", label: "Option 3", disabled: true },
+                    ]}
+                    onChange={(val) => console.log(val)}
+                />
+                <div style={{margin: "20px"}} />
+                <RadioGroup
+                    name="testGroup2"
+                    options={[
+                        { value: "option1", label: "Option 1", disabled: true },
+                        { value: "option2", label: "Option 2", disabled: true },
+                        { value: "option3", label: "Option 3", disabled: true },
+                    ]}
+                    onChange={(val) => console.log(val)}
+                />
                 <div style={{margin: "50px"}} />
             </>
         );
