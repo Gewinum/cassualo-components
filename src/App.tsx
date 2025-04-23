@@ -11,6 +11,7 @@ import TextArea from "./components/textarea.tsx";
 import RangeSlider from "./components/rangeSlider.tsx";
 import DualRangeSlider from "./components/dualRangeSlider.tsx";
 import Switch from "./components/switch.tsx";
+import Checkbox from "./components/checkbox.tsx";
 
 type State = {
     perPage: number;
@@ -105,6 +106,9 @@ class App extends React.Component<Nothing, State> {
                 <DualRangeSlider min={0} max={100} disabled={true} defaultMinValue={35} defaultMaxValue={65} />
                 <Switch />
                 <Switch checked={true} disabled={true} />
+                <div style={{margin: "50px"}} />
+                <Checkbox />
+                <Checkbox checked={true} disabled={true} />
                 <div style={{margin: "50px"}} />
             </>
         );
