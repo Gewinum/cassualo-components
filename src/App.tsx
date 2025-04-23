@@ -12,7 +12,6 @@ import RangeSlider from "./components/rangeSlider.tsx";
 import DualRangeSlider from "./components/dualRangeSlider.tsx";
 import Switch from "./components/switch.tsx";
 import Checkbox from "./components/checkbox.tsx";
-import Radio from "./components/radio.tsx";
 import RadioGroup from "./components/radioGroup.tsx";
 
 type State = {
