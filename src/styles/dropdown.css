@@ -1,0 +1,104 @@
+.dropdown-container {
+    position: relative;
+    width: 200px;
+    font-family: "Poppins", sans-serif;
+    user-select: none;
+}
+
+.dropdown-container select {
+    display: none;
+}
+
+.dropdown-selected {
+    background-color: #FFFEFE;
+    border: 1px solid #D4D3D3;
+    border-radius: 4px;
+    padding: 10px 14px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.2s ease;
+    color: #333;
+    font-size: 14px;
+}
+
+.dropdown-selected:hover {
+    border-color: #FF2A2A;
+}
+
+.dropdown-selected::after {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-right: 2px solid #999;
+    border-bottom: 2px solid #999;
+    transform: rotate(45deg);
+    transition: transform 0.2s ease;
+    margin-left: 8px;
+}
+
+.dropdown-selected.active {
+    border-color: #FF2A2A;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-selected.active::after {
+    transform: rotate(-135deg);
+    margin-top: 4px;
+}
+
+.dropdown-items {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    right: 0;
+    background-color: #FFFEFE;
+    border-radius: 4px;
+    border: 1px solid #DEDEDE;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+.dropdown-items.show {
+    max-height: 300px;
+    opacity: 1;
+}
+
+.dropdown-item {
+    padding: 10px 14px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    color: #333;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-item:hover {
+    background-color: rgba(217, 217, 217, 0.28);
+}
+
+.dropdown-checkbox {
+    width: 16px;
+    height: 16px;
+    margin-right: 10px;
+    border-radius: 3px;
+    position: relative;
+    display: inline-block;
+    flex-shrink: 0;
+    border: 1px solid #D4D3D3;
+}
+
+.dropdown-item.selected .dropdown-checkbox::after {
+    content: "✔";
+    position: absolute;
+    font-size: 14px;
+    color: #FF2A2A;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

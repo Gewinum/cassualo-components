@@ -14,6 +14,7 @@ import Switch from "./components/switch.tsx";
 import Checkbox from "./components/checkbox.tsx";
 import RadioGroup from "./components/radioGroup.tsx";
 import LinearBar from "./components/linearBar.tsx";
+import Dropdown from "./components/dropdown.tsx";
 
 type State = {
     perPage: number;
@@ -151,6 +152,21 @@ class App extends React.Component<Nothing, State> {
                 <OutlinedButton onclick={this.decreasePercentage}>Decrease</OutlinedButton>
                 <div style={{margin: "50px"}} />
                 <LinearBar />
+                <div style={{margin: "50px"}} />
+                <Dropdown options={[
+                    {
+                        label: "not chosen",
+                        value: ""
+                    },
+                    {
+                        label: "option 1",
+                        value: "option1"
+                    },
+                    {
+                        label: "option 2",
+                        value: "option2"
+                    }
+                ]} onChange={(val) => console.log(val)} />
                 <div style={{margin: "50px"}} />
             </>
         );
