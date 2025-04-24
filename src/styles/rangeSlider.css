@@ -1,6 +1,8 @@
 .range-slider {
     width: 504px;
     max-width: 100%;
+    touch-action: none;
+    -ms-touch-action: none;
 }
 
 .range-slider input {

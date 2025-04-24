@@ -3,6 +3,8 @@
     max-width: 100%;
     position: relative;
     margin-top: 10px;
+    touch-action: none;
+    -ms-touch-action: none;
 }
 
 .dual-range-slider .slider-container {
