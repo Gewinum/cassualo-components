@@ -13,9 +13,11 @@ import DualRangeSlider from "./components/dualRangeSlider.tsx";
 import Switch from "./components/switch.tsx";
 import Checkbox from "./components/checkbox.tsx";
 import RadioGroup from "./components/radioGroup.tsx";
+import LinearBar from "./components/linearBar.tsx";
 
 type State = {
     perPage: number;
+    percentage: number;
 };
 
 class App extends React.Component<Nothing, State> {
@@ -23,11 +25,24 @@ class App extends React.Component<Nothing, State> {
         super(props);
         this.state = {
             perPage: window.innerWidth > 480 ? 10 : 7,
+            percentage: 0,
         };
     }
 
     updatePerPage = () => {
         this.setState({ perPage: window.innerWidth > 480 ? 10 : 7 });
+    };
+
+    increasePercentage = () => {
+        this.setState((prevState) => ({
+            percentage: Math.min(prevState.percentage + 10, 100),
+        }));
+    };
+
+    decreasePercentage = () => {
+        this.setState((prevState) => ({
+            percentage: Math.max(prevState.percentage - 10, 0),
+        }));
     };
 
     componentDidMount() {
@@ -130,6 +145,12 @@ class App extends React.Component<Nothing, State> {
                     ]}
                     onChange={(val) => console.log(val)}
                 />
+                <div style={{margin: "50px"}} />
+                <LinearBar percentage={this.state.percentage} />
+                <FilledButton onclick={this.increasePercentage}>Increase</FilledButton>
+                <OutlinedButton onclick={this.decreasePercentage}>Decrease</OutlinedButton>
+                <div style={{margin: "50px"}} />
+                <LinearBar />
                 <div style={{margin: "50px"}} />
             </>
         );
