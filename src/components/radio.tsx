@@ -10,6 +10,9 @@ type RadioProps = {
     onChange: (value: string) => void;
 };
 
+/**
+ * use RadioGroup instead
+ */
 class Radio extends React.Component<RadioProps> {
     render() {
         const { value, name, checked, disabled, onChange } = this.props;
