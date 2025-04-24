@@ -30,10 +30,6 @@ class RangeSlider extends React.Component<Props, State> {
         }
     };
 
-    handleTouchStart = (e: React.TouchEvent) => {
-        e.preventDefault();
-    };
-
     render() {
         const { min, max, disabled } = this.props;
         const { value } = this.state;
@@ -46,7 +42,6 @@ class RangeSlider extends React.Component<Props, State> {
                     max={max}
                     value={value}
                     onChange={this.handleChange}
-                    onTouchStart={this.handleTouchStart}
                     disabled={disabled}
                 />
                 <div className="limits">

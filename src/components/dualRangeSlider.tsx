@@ -42,10 +42,6 @@ class DualRangeSlider extends React.Component<Props, State> {
         }
     };
 
-    handleTouchStart = (e: React.TouchEvent) => {
-        e.preventDefault(); // Prevent scrolling when touching the slider
-    };
-
     notifyChange = () => {
         const { onChange } = this.props;
         const { minValue, maxValue } = this.state;
@@ -79,7 +75,6 @@ class DualRangeSlider extends React.Component<Props, State> {
                         max={max}
                         value={minValue}
                         onChange={this.handleMinChange}
-                        onTouchStart={this.handleTouchStart}
                         disabled={disabled}
                     />
                     <input
@@ -88,7 +83,6 @@ class DualRangeSlider extends React.Component<Props, State> {
                         max={max}
                         value={maxValue}
                         onChange={this.handleMaxChange}
-                        onTouchStart={this.handleTouchStart}
                         disabled={disabled}
                     />
                 </div>
