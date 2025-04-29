@@ -16,6 +16,7 @@ import RadioGroup from "./components/radioGroup.tsx";
 import LinearBar from "./components/linearBar.tsx";
 import Dropdown from "./components/dropdown.tsx";
 import Modal from "./components/modal.tsx";
+import Tag from "./components/tag.tsx";
 
 type State = {
     perPage: number;
@@ -169,6 +170,16 @@ class App extends React.Component<Nothing, State> {
                     }
                 ]} onChange={(val) => console.log(val)} />
                 <div style={{margin: "50px"}} />
+                <div>
+                    <Tag text="Product Launch" />
+                    <Tag text="Product Launch" reversed={true} />
+                    <Tag text="Product Launch" reversed={true} />
+                    <Tag text="cassualo" />
+                    <Tag text="cassualo" reversed={true} />
+                    <Tag text="Product Launch" />
+                    <Tag text="cassualo" />
+                    <Tag text="we are doing important project" reversed={true} />
+                </div>
                 <Modal title="Modal example" contents="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam" onClose={(status) => console.log(status)} />
             </>
         );
