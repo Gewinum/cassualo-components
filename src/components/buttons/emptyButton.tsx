@@ -4,18 +4,29 @@ import "../../styles/buttons.css";
 
 type Props = {
     children?: React.ReactNode;
-    onclick?: () => void;
-    disabled?: boolean;
-}
+};
+
+type ButtonProps = Props & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
 /**
  * This button is as empty as my life.
  */
-class EmptyButton extends React.Component<Props, Nothing> {
+class EmptyButton extends React.Component<ButtonProps, Nothing> {
     render() {
+        const { style = {}, className, children, ...restProps } = this.props;
+
+        const buttonStyle = {
+            background: "#ffffff",
+            ...style,
+        };
+
         return (
-            <button className="button empty" onClick={this.props.onclick} disabled={this.props.disabled}>
-                {this.props.children}
+            <button
+                className={`button empty ${className || ""}`}
+                style={buttonStyle}
+                {...restProps}
+            >
+                {children}
             </button>
         );
     }

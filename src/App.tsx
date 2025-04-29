@@ -15,6 +15,7 @@ import Checkbox from "./components/checkbox.tsx";
 import RadioGroup from "./components/radioGroup.tsx";
 import LinearBar from "./components/linearBar.tsx";
 import Dropdown from "./components/dropdown.tsx";
+import Modal from "./components/modal.tsx";
 
 type State = {
     perPage: number;
@@ -68,24 +69,24 @@ class App extends React.Component<Nothing, State> {
                     }}
                 />
                 <div style={{display: "flex", gap: "10px"}}>
-                    <FilledButton onclick={() => console.log("clicked")}>
+                    <FilledButton onClick={() => console.log("clicked")}>
                         Button
                     </FilledButton>
-                    <OutlinedButton onclick={() => console.log("clicked")}>
+                    <OutlinedButton onClick={() => console.log("clicked")}>
                         Button
                     </OutlinedButton>
-                    <EmptyButton onclick={() => console.log("clicked")}>
+                    <EmptyButton onClick={() => console.log("clicked")}>
                         Button
                     </EmptyButton>
                 </div>
                 <div style={{display: "flex", gap: "10px", marginTop: "30px"}}>
-                    <FilledButton onclick={() => console.log("clicked")} disabled={true}>
+                    <FilledButton onClick={() => console.log("clicked")} disabled={true}>
                         Button
                     </FilledButton>
-                    <OutlinedButton onclick={() => console.log("clicked")} disabled={true}>
+                    <OutlinedButton onClick={() => console.log("clicked")} disabled={true}>
                         Button
                     </OutlinedButton>
-                    <EmptyButton onclick={() => console.log("clicked")} disabled={true}>
+                    <EmptyButton onClick={() => console.log("clicked")} disabled={true}>
                         Button
                     </EmptyButton>
                 </div>
@@ -148,8 +149,8 @@ class App extends React.Component<Nothing, State> {
                 />
                 <div style={{margin: "50px"}} />
                 <LinearBar percentage={this.state.percentage} />
-                <FilledButton onclick={this.increasePercentage}>Increase</FilledButton>
-                <OutlinedButton onclick={this.decreasePercentage}>Decrease</OutlinedButton>
+                <FilledButton onClick={this.increasePercentage}>Increase</FilledButton>
+                <OutlinedButton onClick={this.decreasePercentage}>Decrease</OutlinedButton>
                 <div style={{margin: "50px"}} />
                 <LinearBar />
                 <div style={{margin: "50px"}} />
@@ -168,6 +169,7 @@ class App extends React.Component<Nothing, State> {
                     }
                 ]} onChange={(val) => console.log(val)} />
                 <div style={{margin: "50px"}} />
+                <Modal title="Modal example" contents="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam" onClose={(status) => console.log(status)} />
             </>
         );
     }

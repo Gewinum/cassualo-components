@@ -70,7 +70,6 @@
 .button.empty {
     color: #FF2A2A;
     border: none;
-    background: #ffffff;
 }
 
 .button.empty:not(:disabled):hover::after {
