@@ -1,0 +1,43 @@
+.modal {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 21px;
+    padding: 20px;
+    width: 500px;
+    max-width: 100%;
+    box-sizing: border-box;
+    z-index: 100;
+    background-color: #FAFAFA;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.modal.invisible {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.modal .buttons {
+    gap: 10px;
+    display: inline-flex;
+    justify-content: flex-end;
+    padding-top: 7px;
+}
+
+.modal h2 {
+    font-size: 24px;
+    margin-bottom: 6px;
+}
+
+.modal p {
+    font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 8px;
+}
