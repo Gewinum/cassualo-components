@@ -1,0 +1,44 @@
+.file-upload input {
+    display: none;
+}
+
+.file-upload label {
+    display: block;
+    padding: 50px;
+    width: 366px;
+    max-width: 100%;
+    box-sizing: border-box;
+    border: 1px dashed #C4C4C4;
+    border-radius: 16px;
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.file-upload label:hover {
+    border: 1px dashed #FF4806;
+    background: rgba(255, 60, 0, 0.3);
+}
+
+.file-upload .icon {
+    width: 78px;
+    height: 78px;
+    color: #FF4806;
+}
+
+.file-upload span {
+    font-weight: 500;
+    color: #FF4806;
+    text-decoration: #FF4806;
+}
+
+.file-upload .file-name {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #333;
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+}

@@ -17,6 +17,7 @@ import LinearBar from "./components/linearBar.tsx";
 import Dropdown from "./components/dropdown.tsx";
 import Modal from "./components/modal.tsx";
 import Tag from "./components/tag.tsx";
+import FileUpload from "./components/fileUpload.tsx";
 
 type State = {
     perPage: number;
@@ -180,6 +181,8 @@ class App extends React.Component<Nothing, State> {
                     <Tag text="cassualo" />
                     <Tag text="we are doing important project" reversed={true} />
                 </div>
+                <div style={{margin: "50px"}} />
+                <FileUpload onFileSelect={(file) => console.log(file)} />
                 <Modal title="Modal example" contents="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam" onClose={(status) => console.log(status)} />
             </>
         );
