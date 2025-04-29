@@ -18,6 +18,7 @@ import Dropdown from "./components/dropdown.tsx";
 import Modal from "./components/modal.tsx";
 import Tag from "./components/tag.tsx";
 import FileUpload from "./components/fileUpload.tsx";
+import TextInput from "./components/textInput.tsx";
 
 type State = {
     perPage: number;
@@ -183,6 +184,10 @@ class App extends React.Component<Nothing, State> {
                 </div>
                 <div style={{margin: "50px"}} />
                 <FileUpload onFileSelect={(file) => console.log(file)} />
+                <div style={{margin: "50px"}} />
+                <TextInput placeholder={"Enter your name"} onChange={(e) => console.log(e.target.value)} />
+                <div style={{margin: "10px"}} />
+                <TextInput placeholder={"Enter your name"} error={"i dont like it"} onChange={(e) => console.log(e.target.value)} />
                 <Modal title="Modal example" contents="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam" onClose={(status) => console.log(status)} />
             </>
         );
