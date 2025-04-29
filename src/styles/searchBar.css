@@ -1,20 +1,20 @@
-.text-input {
+.search-bar {
     width: 100%;
     max-width: 500px;
     box-sizing: border-box;
 }
 
-.text-input .input-holder {
+.search-bar .input-holder {
     position: relative;
     width: 100%;
 }
 
-.text-input input {
+.search-bar input {
     background-color: #FFFFFF;
     color: black;
     border: 2px solid #B1B1B1;
     border-radius: 10px;
-    padding: 10px;
+    padding: 10px 40px;
     font-family: "Poppins", sans-serif;
     font-weight: 400;
     font-size: 16px;
@@ -22,33 +22,20 @@
     resize: none;
     width: 100%;
     caret-color: #FF3C00;
-    padding-right: 40px;
 }
 
-.text-input input:disabled {
+.search-bar input:disabled {
     border: 2px solid #DEDEDE;
     color: #767A83;
 }
 
-.text-input input:read-only {
+.search-bar input:read-only {
     background-color: #F1F2F3;
     border: 2px solid #DEDEDE;
 }
 
-.text-input input ::placeholder {
+.search-bar input ::placeholder {
     color: #B1B1B1;
-}
-
-.text-input input.error {
-    border: 2px solid #FF2A2A;
-}
-
-.text-input p {
-    font-size: 12px;
-    font-family: "Poppins", sans-serif;
-    font-weight: 300;
-    margin-left: 10px;
-    margin-top: 1px;
 }
 
 .clear-button {
@@ -72,4 +59,18 @@
 
 .input-holder:focus-within .clear-button {
     display: flex;
+}
+
+.search-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    width: 20px;
+    height: 20px;
+    transform: translateY(-50%);
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1;
 }
