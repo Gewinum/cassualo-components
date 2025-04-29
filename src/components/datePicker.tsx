@@ -1,11 +1,18 @@
-import React, { Component } from 'react';
 import "../styles/datePicker.css";
 import {FaCalendar} from "react-icons/fa6";
-import FilledButton from "./buttons/filledButton.tsx";
 import OutlinedButton from "./buttons/outlinedButton.tsx";
+import Nothing from "../utils/nothing.ts";
+import React from "react";
 
-class DatePicker extends Component {
-    constructor(props) {
+type State = {
+    showCalendar: boolean;
+    selectedDate: Date | null;
+    currentMonth: Date;
+    focused: boolean;
+}
+
+class DatePicker extends React.Component<Nothing, State> {
+    constructor(props: Nothing) {
         super(props);
         this.state = {
             showCalendar: false,
@@ -45,21 +52,21 @@ class DatePicker extends Component {
         });
     };
 
-    selectDate = (date) => {
+    selectDate = (date: Date) => {
         this.setState({
             selectedDate: date,
             showCalendar: false
         });
     };
 
-    clearDate = (e) => {
+    clearDate = (e: any) => {
         e.stopPropagation();
         this.setState({
             selectedDate: null
         });
     };
 
-    formatDate = (date) => {
+    formatDate = (date: Date) => {
         if (!date) return '';
 
         const months = [

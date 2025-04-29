@@ -1,4 +1,4 @@
-import React from "react";
+import React, {RefObject} from "react";
 import "../styles/timeInput.css";
 import {FaClock} from "react-icons/fa6";
 
@@ -27,8 +27,8 @@ class TimeInput extends React.Component<Props, State> {
             timeOptions: this.generateTimeOptions()
         };
 
-        this.inputRef = React.createRef();
-        this.dropdownRef = React.createRef();
+        this.inputRef = React.createRef() as RefObject<HTMLInputElement>;
+        this.dropdownRef = React.createRef() as RefObject<HTMLDivElement>;
     }
 
     componentDidMount() {

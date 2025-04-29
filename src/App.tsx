@@ -22,6 +22,7 @@ import TextInput from "./components/textInput.tsx";
 import SearchBar from "./components/searchBar.tsx";
 import TimeInput from "./components/timeInput.tsx";
 import DatePicker from "./components/datePicker.tsx";
+import Footer from "./components/footer.tsx";
 
 type State = {
     perPage: number;
@@ -199,6 +200,7 @@ class App extends React.Component<Nothing, State> {
                 <DatePicker />
                 <div style={{margin: "600px"}} />
                 <Modal title="Modal example" contents="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam" onClose={(status) => console.log(status)} />
+                <Footer />
             </>
         );
     }

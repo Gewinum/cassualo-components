@@ -7,24 +7,20 @@ type Props = {
     selectedFile?: File | null;
 };
 
-class State {
+type State = {
     id: string;
     isDragging: boolean;
     file: File | null;
-
-    constructor() {
-        this.id = `file-upload-${Math.random().toString(36).substr(2, 9)}`;
-        this.isDragging = false;
-        this.file = null;
-    }
-}
+};
 
 class FileUpload extends React.Component<Props, State> {
     constructor(props: Props) {
         super(props);
-        this.state = new State();
-        if (props.selectedFile) {
-            this.state.file = props.selectedFile;
+
+        this.state = {
+            id: `file-upload-${Math.random().toString(36).substr(2, 9)}`,
+            isDragging: false,
+            file: props.selectedFile || null,
         }
     }
 
