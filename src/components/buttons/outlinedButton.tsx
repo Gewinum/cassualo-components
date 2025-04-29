@@ -16,7 +16,6 @@ class OutlinedButton extends React.Component<ButtonProps, Nothing> {
         const { style = {}, className, children, ...restProps } = this.props;
 
         const buttonStyle = {
-            background: "#ffffff",
             ...style,
         };
 

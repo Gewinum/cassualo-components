@@ -1,0 +1,90 @@
+.time-input-container {
+    position: relative;
+    width: 400px;
+    max-width: 100%;
+    font-family: "Poppins", sans-serif;
+}
+
+.time-input-container .time-input-field {
+    width: 100%;
+    padding: 10px 10px 10px 35px;
+    border: 1px solid #DEDEDE;
+    border-radius: 4px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+    box-sizing: border-box;
+}
+
+.time-input-container .time-input-field::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+}
+
+.time-input-container .time-input-field:focus {
+    border-color: #999;
+}
+
+.time-input-container .time-input-clock-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+}
+
+.time-input-container .time-dropdown {
+    position: absolute;
+    margin-top: 10px;
+    top: 100%;
+    left: 0%;
+    width: 100%;
+    background-color: #FDFDFD;
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.11);
+    z-index: 1000;
+    display: none;
+}
+
+.time-input-container .time-dropdown.show {
+    display: block;
+}
+
+.time-input-container .time-dropdown-current {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #e0e0e0;
+    background-color: #f9f9f9;
+}
+
+.time-input-container .time-dropdown-current-time {
+    font-weight: 500;
+}
+
+.time-input-container .time-dropdown-clear {
+    cursor: pointer;
+    background: rgba(106, 106, 106, 0.2);
+    color: #222222;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    transition: background-color 0.2s;
+}
+
+.time-input-container .time-dropdown-options {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.time-input-container .time-dropdown-option {
+    padding: 8px 10px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}

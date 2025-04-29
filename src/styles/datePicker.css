@@ -1,0 +1,143 @@
+.date-picker-container {
+    width: 100%;
+    max-width: 320px;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: black;
+    user-select: none;
+    position: relative;
+}
+
+.date-picker-container .date-input {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+    cursor: pointer;
+    transition: border-color 0.2s ease-in-out;
+}
+
+.date-picker-container .date-input.focused {
+    border-color: #ff3b30;
+    box-shadow: 0 0 0 1px rgba(255, 59, 48, 0.2);
+}
+
+.date-picker-container .date-input input {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 16px;
+    margin-left: 8px;
+    background: transparent;
+}
+
+.date-picker-container .calendar-icon {
+    font-size: 18px;
+    color: #666;
+}
+
+.date-picker-container .calendar {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    width: 100%;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 10;
+    overflow: hidden;
+    padding-bottom: 10px;
+}
+
+.date-picker-container .calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    background-color: #f8f8f8;
+}
+
+.date-picker-container .month-year {
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.date-picker-container .nav-button {
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.date-picker-container .days-header {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    padding: 10px 0;
+    text-align: center;
+}
+
+.date-picker-container .day-name {
+    font-size: 14px;
+    color: #666;
+    font-weight: 500;
+}
+
+.date-picker-container .days-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+    padding: 0 10px;
+}
+
+.date-picker-container .day {
+    height: 36px;
+    width: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 14px;
+    transition: background-color 0.2s;
+}
+
+.date-picker-container .day:hover {
+    background-color: #FF4322;
+    color: white;
+}
+
+.date-picker-container .day.empty {
+    cursor: default;
+}
+
+.date-picker-container .day.selected {
+    background-color: #FF4322;
+    color: white;
+    font-weight: 500;
+}
+
+.date-picker-container .calendar-footer {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 15px 5px;
+}
+
+.date-picker-container .clear-button {
+    background-color: #FF4322;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+}

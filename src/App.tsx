@@ -20,6 +20,8 @@ import Tag from "./components/tag.tsx";
 import FileUpload from "./components/fileUpload.tsx";
 import TextInput from "./components/textInput.tsx";
 import SearchBar from "./components/searchBar.tsx";
+import TimeInput from "./components/timeInput.tsx";
+import DatePicker from "./components/datePicker.tsx";
 
 type State = {
     perPage: number;
@@ -191,6 +193,11 @@ class App extends React.Component<Nothing, State> {
                 <TextInput placeholder={"Enter your name"} error={"i dont like it"} onChange={(e) => console.log(e.target.value)} />
                 <div style={{margin: "50px"}} />
                 <SearchBar placeholder={"Search"} onChange={(e) => console.log(e.target.value)} />
+                <div style={{margin: "50px"}} />
+                <TimeInput />
+                <div style={{margin: "50px"}} />
+                <DatePicker />
+                <div style={{margin: "600px"}} />
                 <Modal title="Modal example" contents="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam" onClose={(status) => console.log(status)} />
             </>
         );
