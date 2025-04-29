@@ -23,6 +23,7 @@ import SearchBar from "./components/searchBar.tsx";
 import TimeInput from "./components/timeInput.tsx";
 import DatePicker from "./components/datePicker.tsx";
 import Footer from "./components/footer.tsx";
+import ErrorAlert from "./components/errorAlert.tsx";
 
 type State = {
     perPage: number;
@@ -199,6 +200,7 @@ class App extends React.Component<Nothing, State> {
                 <div style={{margin: "50px"}} />
                 <DatePicker />
                 <div style={{margin: "600px"}} />
+                <ErrorAlert title={"This is error message"} content={"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's"} onClose={() => console.log("closed")} />
                 <Modal title="Modal example" contents="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam" onClose={(status) => console.log(status)} />
                 <Footer />
             </>

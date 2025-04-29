@@ -15,7 +15,7 @@
 .button:not(:disabled)::after {
     content: '';
     position: absolute;
-    height: 103%;
+    height: 104%;
     width: 102%;
     border-radius: 11px;
     background-image: linear-gradient(180deg, #FF4123 0%, #FF8702 100%);
